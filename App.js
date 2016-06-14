@@ -5,14 +5,13 @@ import ReactDOM from 'react-dom';
 class App extends React.Component {
 	constructor(){
 		super();
-		this.state = { txt: 'this is the state txt' }
+		this.state = { txt: '' }
 		this.update = this.update.bind(this);
 	}
 	update(event) {
 		this.setState({ txt: event.target.value })
 	}
 	render(){
-		let txt = this.props.txt
 		return (
 			<div>
 				<Widget txt={this.state.txt} update={this.update} />
@@ -36,18 +35,18 @@ const Widget = (props) => {
 // This is cannot have states
 // const App = () => <h1>Hellow Eggheads</h1>
 
-App.propTypes = {
-	txt: React.PropTypes.string,
-	cat: React.PropTypes.number.isRequired
-}
+// App.propTypes = {
+// 	txt: React.PropTypes.string,
+// 	cat: React.PropTypes.number.isRequired
+// }
+//
+// App.defaultProps = {
+// 	txt: 'Default txt'
+// }
 
-App.defaultProps = {
-	txt: 'Default txt'
-}
+// ReactDOM.render(
+// 	<App cat={5} txt="this is the props value" />,
+// 	document.getElementById('app')
+// );
 
-ReactDOM.render(
-	<App cat={5} txt="this is the props value" />,
-	document.getElementById('app')
-);
-
-//export default App
+export default App
